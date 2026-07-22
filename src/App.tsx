@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { COFFEE_PRODUCTS } from './data/coffeeProducts';
 import { CoffeeProduct, CartItem, CoffeeCategory, GrindOption } from './types/coffee';
+import { usePersistentState } from './hooks/usePersistentState';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { SideBanners } from './components/SideBanners';
@@ -20,16 +21,16 @@ import { AboutPage } from './pages/AboutPage';
 import { PhinCustomizer } from './components/PhinCustomizer';
 
 export function AppContent() {
-  // Products & Filter state
-  const [products, setProducts] = useState<CoffeeProduct[]>(COFFEE_PRODUCTS);
-  const [activeCategory, setActiveCategory] = useState<CoffeeCategory>('all');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [activeRoast, setActiveRoast] = useState('Tất Cả Mức Rang');
-  const [sortBy, setSortBy] = useState<'popular' | 'price-low' | 'price-high' | 'rating'>('popular');
+  // Persistent State across F5 page reloads
+  const [products] = useState<CoffeeProduct[]>(COFFEE_PRODUCTS);
+  const [activeCategory, setActiveCategory] = usePersistentState<CoffeeCategory>('vada_active_category', 'all');
+  const [searchQuery, setSearchQuery] = usePersistentState<string>('vada_search_query', '');
+  const [activeRoast, setActiveRoast] = usePersistentState<string>('vada_active_roast', 'Tất Cả Mức Rang');
+  const [sortBy, setSortBy] = usePersistentState<'popular' | 'price-low' | 'price-high' | 'rating'>('vada_sort_by', 'popular');
+  const [cartItems, setCartItems] = usePersistentState<CartItem[]>('vada_cart_items', []);
 
-  // Modals & Cart state
+  // Modals state
   const [quickViewProduct, setQuickViewProduct] = useState<CoffeeProduct | null>(null);
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [discountAmount, setDiscountAmount] = useState(0);
@@ -115,7 +116,7 @@ export function AppContent() {
           onSearchChange={setSearchQuery}
         />
 
-        {/* Side Banners Left & Right */}
+        {/* Side Banners Left & Right (Persistent dismissal state) */}
         <SideBanners />
 
         {/* Page Routes */}
@@ -179,7 +180,7 @@ export function AppContent() {
       {/* Footer */}
       <Footer />
 
-      {/* Floating Non-Intrusive Campaign Toast */}
+      {/* Floating Non-Intrusive Campaign Toast (Persistent dismissal state) */}
       <FloatingPromotionToast />
 
       {/* Global Modals */}

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Gift, X, Sparkles, Copy, Check } from 'lucide-react';
+import { Gift, X, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { usePersistentState } from '../hooks/usePersistentState';
 
 export const FloatingPromotionToast: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
+  const [dismissed, setDismissed] = usePersistentState<boolean>('vada_toast_dismissed', false);
   const [copied, setCopied] = useState(false);
 
   if (dismissed) return null;
@@ -31,7 +32,7 @@ export const FloatingPromotionToast: React.FC = () => {
           <button
             onClick={() => setDismissed(true)}
             className="absolute top-3 right-3 text-[#FBF5ED]/40 hover:text-[#D4A373]"
-            title="Đóng vĩnh viễn"
+            title="Tắt quảng cáo (Lưu trạng thái khi F5)"
           >
             <X className="w-4 h-4" />
           </button>

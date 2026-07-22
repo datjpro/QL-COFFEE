@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { X, Gift, Sparkles, Copy, Check, ArrowRight } from 'lucide-react';
+import { X, Copy, Check, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { usePersistentState } from '../hooks/usePersistentState';
 
 export const SideBanners: React.FC = () => {
-  const [showLeft, setShowLeft] = useState(true);
-  const [showRight, setShowRight] = useState(true);
+  const [showLeft, setShowLeft] = usePersistentState<boolean>('vada_banner_left_visible', true);
+  const [showRight, setShowRight] = usePersistentState<boolean>('vada_banner_right_visible', true);
   const [copiedCode, setCopiedCode] = useState(false);
 
   const handleCopy = () => {
@@ -31,7 +32,7 @@ export const SideBanners: React.FC = () => {
             <button
               onClick={() => setShowLeft(false)}
               className="absolute top-2 right-2 p-1.5 rounded-full liquid-glass text-[#FBF5ED] hover:text-[#D4A373] transition-colors"
-              title="Đóng banner"
+              title="Đóng banner (Lưu trạng thái khi F5)"
             >
               <X className="w-3.5 h-3.5" />
             </button>
@@ -74,7 +75,7 @@ export const SideBanners: React.FC = () => {
             <button
               onClick={() => setShowRight(false)}
               className="absolute top-2 right-2 p-1.5 rounded-full liquid-glass text-[#FBF5ED] hover:text-[#D4A373] transition-colors"
-              title="Đóng banner"
+              title="Đóng banner (Lưu trạng thái khi F5)"
             >
               <X className="w-3.5 h-3.5" />
             </button>
