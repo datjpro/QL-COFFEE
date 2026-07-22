@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from 'react';
-import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { COFFEE_PRODUCTS } from './data/coffeeProducts';
 import { CoffeeProduct, CartItem, CoffeeCategory, GrindOption } from './types/coffee';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { AnnouncementBar } from './components/AnnouncementBar';
+import { SideBanners } from './components/SideBanners';
 import { FloatingPromotionToast } from './components/FloatingPromotionToast';
 import { ProductQuickViewModal } from './components/ProductQuickViewModal';
 import { CartDrawer } from './components/CartDrawer';
@@ -107,9 +107,6 @@ export function AppContent() {
     <div className="min-h-screen bg-[#120C0A] text-[#FBF5ED] font-sans antialiased selection:bg-[#D4A373] selection:text-[#120C0A] flex flex-col justify-between">
       
       <div>
-        {/* Top Non-Intrusive Offer Bar */}
-        <AnnouncementBar />
-
         {/* Navigation Bar */}
         <Navbar
           cartCount={totalCartItems}
@@ -117,6 +114,9 @@ export function AppContent() {
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
         />
+
+        {/* Side Banners Left & Right */}
+        <SideBanners />
 
         {/* Page Routes */}
         <Routes>
