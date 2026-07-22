@@ -22,6 +22,19 @@ This repository follows a strict multi-agent architecture and systematic phased 
 
 ---
 
+## 🗺️ Multi-Page Routing Architecture (`HashRouter`)
+
+The application is structured into modular routes for 100% static hosting compatibility on **GitHub Pages**:
+- `/` - Home Page (`HomePage.tsx`)
+- `/products` - Full Catalog & Filters (`ProductsPage.tsx`)
+- `/product/:id` - Dedicated Product Detail View (`ProductDetailPage.tsx`)
+- `/customizer` - Virtual Phin Brewing Lab (`PhinCustomizer.tsx`)
+- `/promotions` - Non-Intrusive Campaign Hub (`PromotionsPage.tsx`)
+- `/knowledge` - Coffee Encyclopedia & Masterclass (`KnowledgePage.tsx`)
+- `/about` - Brand Story & Farm Origins (`AboutPage.tsx`)
+
+---
+
 ## 🎨 UI Prompt Engineering Standards Applied
 
 1. **Explicit Color Palette**:
@@ -32,10 +45,9 @@ This repository follows a strict multi-agent architecture and systematic phased 
    - `--color-crema-light`: `#E6C280` (Caramel Gold Text)
    - `--color-milk`: `#FBF5ED` (Cream White Text)
 
-2. **Glassmorphism Spec**:
-   - `background: rgba(37, 27, 23, 0.65)`
-   - `backdrop-filter: blur(12px) saturate(180%)`
-   - `border: 1px solid rgba(212, 163, 115, 0.15)`
+2. **Non-Intrusive Promotional UX**:
+   - Dismissible top announcement ticker bar ([AnnouncementBar.tsx](file:///D:/Demo/QL-COFFEE/src/components/AnnouncementBar.tsx)).
+   - Non-blocking bottom-left floating widget ([FloatingPromotionToast.tsx](file:///D:/Demo/QL-COFFEE/src/components/FloatingPromotionToast.tsx)).
 
 3. **No Guessing Rule**:
    - All prices use `Intl.NumberFormat('vi-VN')` formatting.

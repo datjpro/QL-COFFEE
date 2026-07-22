@@ -1,9 +1,10 @@
-# ☕ VÀĐÀ COFFEE - CÀ PHÊ DI SẢN VIỆT NAM
+# ☕ VÀĐÀ COFFEE - CÀ PHÊ DI SẢN VIỆT NAM (MULTI-PAGE EDITION)
 
-> **Website trải nghiệm & thương mại điện tử Cà Phê Việt Nam cao cấp**, được thiết kế chuẩn mực theo kỹ năng **`UI-PROMPT-ENGINEERING-SKILL`** kết hợp cùng sức mạnh từ hệ sinh thái **Google Antigravity AI**.
+> **Website trải nghiệm & thương mại điện tử Cà Phê Việt Nam cao cấp**, được cấu trúc đa trang (`HashRouter`) tinh tế theo chuẩn mực **`UI-PROMPT-ENGINEERING-SKILL`** kết hợp cùng sức mạnh từ hệ sinh thái **Google Antigravity AI**.
 
 [![Vite](https://img.shields.io/badge/Vite-6.1.1-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![React Router](https://img.shields.io/badge/React_Router-7.0-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![GitHub Pages Compatible](https://img.shields.io/badge/GitHub_Pages-Ready-22c55e?style=for-the-badge&logo=github&logoColor=white)](#-hướng-dẫn-chạy-demo-trên-github-pages)
@@ -12,12 +13,18 @@
 
 ## 🌟 Điểm Nổi Bật Về Giao Diện & Trải Nghiệm (UI/UX)
 
-* 🎨 **Thiết Kế Đậm Chất Cà Phê Di Sản**: Tông màu ấm áp chuẩn Espresso (`#120C0A`), Nông trường mộc (`#1C1310`) cùng sắc vàng Crema kiêu sa (`#D4A373`).
-* 💨 **Hiệu Ứng Làn Hơi Cà Phê Bay (Animated Coffee Steam)**: Tạo cảm giác nóng hổi, sống động ngay từ cái nhìn đầu tiên trên Hero Banner.
-* 🧪 **Bộ Giả Lập Pha Phin Virtual (Phin Brewing Calculator)**: Tính toán tự động thể tích nước chiết xuất, hàm lượng Caffeine, độ chua / độ đắng theo tỷ lệ Robusta / Arabica & sữa đặc người dùng tùy chỉnh.
-* 🛍️ **Giỏ Hàng Thông Minh (Slide-over Cart Drawer)**: Tích hợp thanh tiến trình Miễn phí vận chuyển (Freeship bar), áp mã ưu đãi (`COFFEEDI-SAN` giảm 15%), tùy chọn thùng gỗ sơn mài gói quà.
-* 📱 **Thanh Toán VietQR & Pháo Hoa Ăn Mừng**: Mô phỏng mã VietQR tự động cùng hiệu ứng pháo hoa ăn mừng (`canvas-confetti`) khi chốt đơn thành công.
-* 🗺️ **Hành Trình Di Sản 3 Miền**: Bản đồ hạt cà phê Đắk Lắk (Fine Robusta) & Cầu Đất (Arabica Specialty cao 1.650m).
+* 🌐 **Cấu Trúc Đa Trang (Multi-Page Architecture)**:
+  - **Trang Chủ (`/`)**: Banner Hero ấn tượng, điểm nhấn sản phẩm bán chạy & teaser cẩm nang.
+  - **Danh Mục Sản Phẩm (`/products`)**: Trang sản phẩm chuyên biệt với bộ lọc mức rang, loại hạt & tìm kiếm.
+  - **Trang Chi Tiết Sản Phẩm (`/product/:id`)**: Hiển thị nốt hương vị, biểu đồ độ chua/đắng, tùy chọn kích thước xay (Phin, Espresso, Cold brew).
+  - **Virtual Phin Lab (`/customizer`)**: Phòng thí nghiệm giả lập tỷ lệ pha chế Phin tương tác.
+  - **Bách Khoa Cà Phê (`/knowledge`)**: Cẩm nang so sánh Robusta vs Arabica, kỹ thuật sơ chế, thổ nhưỡng 3 miền & công thức Cà phê Trứng / Cà phê Muối.
+  - **Trung Tâm Ưu Đãi (`/promotions`)**: Các chiến dịch tri ân được thiết kế tinh tế.
+  - **Về Chúng Tôi (`/about`)**: Hành trình di sản 1857-2026 & hệ thống showroom.
+* 📢 **Chiến Dịch Quảng Cáo Tinh Tế (Non-Intrusive Campaigns)**:
+  - Ticker bar chạy ở đầu trang có nút ẩn/hiện nhẹ nhàng.
+  - Floating Toast góc dưới không che chắn tầm nhìn hay làm phiền người dùng.
+  - Mã giảm giá `COFFEEDI-SAN` (-15%), chương trình đổi Phin cũ & quà tặng Phin Rose Gold.
 
 ---
 
@@ -26,6 +33,7 @@
 | Hạng mục | Công nghệ / Công cụ | Vai trò & Mô tả |
 | :--- | :--- | :--- |
 | **Framework Core** | **React 19 + Vite 6 + TypeScript** | Xây dựng Single Page Application cực nhanh, type-safe tuyệt đối |
+| **Routing** | **React Router (`HashRouter`)** | Điều hướng đa trang không bị lỗi 404 trên GitHub Pages |
 | **Styling System** | **Tailwind CSS v4** | Hệ thống Design System tokens, Glassmorphism snippet & animations |
 | **Icon Set** | **Lucide React (`lucide-react`)** | Bộ icon vector sắc nét, tối ưu dung lượng |
 | **Hiệu Ứng Sàn** | **Canvas Confetti** | Pháo hoa ăn mừng tương tác khi đặt hàng thành công |
@@ -34,9 +42,9 @@
 
 ---
 
-## 🌿 Cấu Trúc Dự Án & Các Pha Phát Triển (Phased Execution Plan)
+## 🌿 Các Nhánh Git & Lịch Sử Commit (Phase 1 -> Phase 8)
 
-Dự án được thực hiện nghiêm ngặt theo **4 Pha (Phases)** với các nhánh Git riêng biệt:
+Dự án được thực hiện nghiêm ngặt theo **8 Pha (Phases)**:
 
 ```
 QL-COFFEE/
@@ -47,77 +55,52 @@ QL-COFFEE/
 ├── 📁 UI-PROMPT-ENGINEERING-SKILL/ ← Bộ kỹ năng Prompt Engineering UI
 ├── 📁 src/
 │   ├── 📄 main.tsx
-│   ├── 📄 App.tsx                ← Layout tổng hòa các component & state giỏ hàng
-│   ├── 📄 index.css              ← Visual tokens, Glassmorphism, animations steam
-│   ├── 📁 types/                 ← Interface TypeScript định nghĩa Sản phẩm, Giỏ hàng, Bộ lọc
+│   ├── 📄 App.tsx                ← HashRouter & Routes chính
+│   ├── 📄 index.css              ← Visual tokens, Glassmorphism, animations
+│   ├── 📁 types/                 ← Interface TypeScript định nghĩa Sản phẩm, Giỏ hàng
 │   ├── 📁 data/                  ← Dataset dữ liệu mẫu Cà Phê Di Sản Việt Nam
-│   └── 📁 components/
-│       ├── 📄 Navbar.tsx         ← Sticky Header + Search + Mini Cart Badge
-│       ├── 📄 HeroSection.tsx    ← Hero Banner + Steam Animation + Highlight Badges
-│       ├── 📄 CategoryFilter.tsx ← Lọc loại sản phẩm, mức rang & sắp xếp
-│       ├── 📄 ProductCard.tsx    ← Card sản phẩm + Vị đắng/chua + Quick Add
-│       ├── 📄 ProductGrid.tsx    ← Grid responsive + Empty state
-│       ├── 📄 PhinCustomizer.tsx  ← Bộ giả lập pha Phin tương tác 3D
-│       ├── 📄 ProductQuickViewModal.tsx ← Modal xem chi tiết + Chọn kích thước xay
-│       ├── 📄 CartDrawer.tsx     ← Giỏ hàng trượt + Thanh toán mã ưu đãi
-│       ├── 📄 CheckoutModal.tsx  ← Popup điền địa chỉ & VietQR thanh toán
-│       ├── 📄 HeritageStory.tsx  ← Lịch sử 1857-2026 & Bản đồ hạt cà phê 3 miền
-│       ├── 📄 CustomerReviews.tsx← Đánh giá từ khách hàng thực tế
-│       └── 📄 Footer.tsx         ← Địa chỉ showroom Hà Nội, Sài Gòn, Đà Lạt & Newsletter
+│   ├── 📁 components/            ← Navbar, Footer, ProductCard, AnnouncementBar, Toast...
+│   └── 📁 pages/                 ← HomePage, ProductsPage, ProductDetailPage, KnowledgePage, PromotionsPage, AboutPage...
 ```
 
-### 📍 Lịch Sử Nhánh & Commit Chuẩn Semantic
+### 📍 Lịch Sử Nhánh Git Chuẩn Semantic
 
-1. **Phase 1 (`feature/phase-1-setup`)**:  
-   `feat(setup): initialize Vite, TailwindCSS design tokens & GitHub Pages config`
-2. **Phase 2 (`feature/phase-2-components`)**:  
-   `feat(catalog): implement header, hero section, product cards & filtering system`
-3. **Phase 3 (`feature/phase-3-interactive`)**:  
-   `feat(experience): add Phin coffee customizer, cart drawer, checkout modal & heritage story`
-4. **Phase 4 (`feature/phase-4-testing-deploy`)**:  
-   `docs(release): add AGENTS.md, complete README.md, build verification & final release`
+1. `feature/phase-1-setup`: `feat(setup): initialize Vite, TailwindCSS design tokens & GitHub Pages config`
+2. `feature/phase-2-components`: `feat(catalog): implement header, hero section, product cards & filtering system`
+3. `feature/phase-3-interactive`: `feat(experience): add Phin coffee customizer, cart drawer, checkout modal & heritage story`
+4. `feature/phase-4-testing-deploy`: `docs(release): add AGENTS.md, complete README.md, build verification & final release`
+5. `feature/phase-5-routing-pages`: `feat(routing): implement multi-page structure with HashRouter`
+6. `feature/phase-6-promotions`: `feat(promotions): add non-intrusive campaign hub & subtle offer bar`
+7. `feature/phase-7-coffee-knowledge`: `feat(knowledge): implement comprehensive coffee encyclopedia hub`
+8. `feature/phase-8-testing-docs`: `docs(release): verify multi-page release, update AGENTS.md & README.md`
 
 ---
 
 ## 💻 Hướng Dẫn Cài Đặt & Chạy Demo Local
 
-### 1. Cài đặt Dependencies
 ```bash
+# 1. Cài đặt Dependencies
 npm install
-```
 
-### 2. Chạy Server Development Local
-```bash
+# 2. Chạy Server Development Local
 npm run dev
-```
-Truy cập địa chỉ `http://localhost:5173` trên trình duyệt.
 
-### 3. Tự Động Kiếm Tra & Build Production
-```bash
+# 3. Tự Động Kiểm Tra & Build Production
 npm run test
 ```
-Lệnh này sẽ tự động kiểm tra TypeScript types và đóng gói sản phẩm ra thư mục `/dist`.
 
 ---
 
 ## 🚀 Hướng Dẫn Chạy Demo Trên Link GitHub Pages
 
-Sản phẩm đã được cấu hình đường dẫn tương đối (`base: './'`) trong `vite.config.ts`, sẵn sàng chạy trên bất kỳ kho lưu trữ GitHub nào.
+Cấu hình `base: './'` trong `vite.config.ts` kết hợp `HashRouter` giúp chạy mượt mà 100% trên GitHub Pages.
 
-### Cách 1: Deploy Tự Động Qua GitHub Actions (Khuyên dùng)
-1. Đẩy code lên nhánh `main` trên GitHub repository:
+1. Đẩy code lên nhánh `main`:
    ```bash
    git push origin main
    ```
-2. Vào **Settings** > **Pages** trên GitHub Repository.
-3. Tại mục **Source**, chọn **GitHub Actions**.
-4. GitHub sẽ tự động build và cấp link Demo công khai có dạng:
-   `https://<username>.github.io/QL-COFFEE/`
-
-### Cách 2: Deploy Qua Nút CLI `gh-pages`
-```bash
-npx gh-pages -d dist
-```
+2. Vào **Settings** > **Pages** trên GitHub Repository > chọn **Source: GitHub Actions**.
+3. Link Demo tự động hiển thị có dạng: `https://<username>.github.io/QL-COFFEE/`
 
 ---
 
@@ -130,5 +113,5 @@ npx gh-pages -d dist
 ---
 
 <p align="center">
-  <sub>Cảm ơn bạn đã trải nghiệm <strong>Vàđà Coffee</strong> - Tự hào Cà Phê Việt Nam ☕</sub>
+  <sub>Cảm ơn bạn đã trải nghiệm <strong>Vàđà Coffee Multi-Page Edition</strong> ☕</sub>
 </p>
