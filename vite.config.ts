@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/QL-COFFEE/', // Base path match for https://datjpro.github.io/QL-COFFEE/
+  base: './', // Relative base path so it works on any URL and subpath
   build: {
     outDir: 'dist',
     sourcemap: false,
